@@ -6,7 +6,81 @@
     </head>
     <body>
         <script>
+            //Psuedo Code goes here
+            //
+            //Computer Choice
+            //Create a function called getComputerChoice
+            //Randomly return string values "rock","paper" or "scissors."
+            //Generate a random number between 0-1 and return a string.
+            //Use conditions where 0-.33,.34-.66, and .67-1 are linked to strings.
+            //Log string to the console.
+
+            function getComputerChoice() {
+                let randomNumber = Math.random();
+                console.log(randomNumber);
+
+                if (randomNumber <= 0.33) {
+                    console.log("rock");
+                } else if (randomNumber >= 0.34 && randomNumber <= 0.66) {
+                    console.log("paper");
+                } else {
+                    console.log("scissors")
+                }
+            }
             
+            //Human Choice
+            //Open prompt for player to enter "rock", "paper", or "scissors".
+            //Log their response to the console.
+
+            function getHumanChoice() {
+                let textInput = window.prompt("Type 'rock', 'paper', or 'scissors!");
+                let textLower = textInput.toLowerCase();
+                console.log(textLower);
+            }
+      
+            //Scoring
+
+            let humanScore = 0;
+            let computerScore = 0;
+            let humanChoice = getHumanChoice();
+            let computerChoice = getComputerChoice();
+
+            //Play A Round
+            //Take user input and computer choice to compare.
+            //If rock beats scissors, log "rock beats scissors".
+            //If paper beats rock, log "paper beats rock".
+            //If scissors beats paper, log "scissors beats paper".
+            //If choices are the same, log "DRAW!".
+            //Change log if user or computer wins with "You lose" or "You win".
+            //Increase user or computer score by 1.
+
+            function playRound(humanChoice,computerChoice) {
+                if (humanChoice === "rock",computerChoice === "scissors") {
+                    console.log("You win! ROCK beats SCISSORS");
+                    humanScore++;
+                } else if (humanChoice === "rock",computerChoice === "paper") {
+                    console.log("You lose! ROCK beats PAPER");
+                    computerScore++;
+                } else if (humanChoice === "paper",computerChoice === "rock") {
+                    console.log("You win! PAPER beats ROCK");
+                    humanScore++;
+                } else if (humanChoice === "paper",computerChoice === "scissors") {
+                    console.log("You lose! SCISSORS beats PAPER");
+                    computerScore++;
+                } else if (humanChoice === "scissors",computerChoice === "paper") {
+                    console.log("You win! SCISSORS beats PAPER");
+                    humanScore++;
+                } else if (humanChoice === "scissors",computerChoice === "rock") {
+                    console.log("You lose! ROCK beats SCISSORS");
+                    computerScore++;
+                } else {
+                    console.log("DRAW!")
+                }
+            }
+
+            playRound();
+            console.log(humanScore,computerScore);
+
         </script>
     </body>
 </html>
