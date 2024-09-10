@@ -37,27 +37,33 @@
                 let textLower = textInput.toLowerCase();
                 return textLower;
             }
-      
-            //Scoring
 
-            let humanScore = 0;
-            let computerScore = 0;
-            //This seems wrong. Investigate how to return a value from 
-            //a function to create a new variable.
             let humanChoice = getHumanChoice();
             let computerChoice = getComputerChoice();
             console.log(humanChoice);
             console.log(computerChoice);
-            //Play A Round
-            //Take user input and computer choice to compare.
-            //If rock beats scissors, log "rock beats scissors".
-            //If paper beats rock, log "paper beats rock".
-            //If scissors beats paper, log "scissors beats paper".
-            //If choices are the same, log "DRAW!".
-            //Change log if user or computer wins with "You lose" or "You win".
-            //Increase user or computer score by 1.
+            
 
-            function playRound(humanChoice, computerChoice) {
+            //playGame function
+
+            //Human inputs word and wins or loses.
+            //The prompt opens again and plays another 4 rounds.
+            //Game ends after 5 rounds.
+
+            function playGame() {
+                let humanScore = 0;
+                let computerScore = 0;
+
+                //Play A Round
+                //Take user input and computer choice to compare.
+                //If rock beats scissors, log "rock beats scissors".
+                //If paper beats rock, log "paper beats rock".
+                //If scissors beats paper, log "scissors beats paper".
+                //If choices are the same, log "DRAW!".
+                //Change log if user or computer wins with "You lose" or "You win".
+                //Increase user or computer score by 1.
+
+                function playRound(humanChoice, computerChoice) {
                 if (humanChoice === "rock" && computerChoice === "scissors") {
                     console.log("You win! ROCK beats SCISSORS");
                     humanScore++;
@@ -80,10 +86,13 @@
                     console.log("DRAW!")
                 }
             }
-
-            playRound(humanChoice,computerChoice);
+            
+            playRound(humanChoice, computerChoice);
             console.log(humanScore,computerScore);
 
+            }
+
+            playGame();
         </script>
     </body>
 </html>
