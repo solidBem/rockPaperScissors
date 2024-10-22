@@ -5,6 +5,9 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
+        <button id="btn-rock">Rock</button>
+        <button id="btn-paper">Paper</button>
+        <button id="btn-scissors">Scissors</button>
         <script>
             function getComputerChoice() {
                 let randomNumber = Math.random();
@@ -16,11 +19,9 @@
                     return "scissors";
                 }
             }
-            function getHumanChoice() {
-                let textInput = window.prompt("Type 'rock', 'paper', or 'scissors!");
-                let textLower = textInput.toLowerCase();
-                return textLower;
-            }
+            
+            //Removed prompt to get human choice
+            
             function playGame() {
                 let humanScore = 0;
                 let computerScore = 0;
@@ -47,13 +48,7 @@
                     console.log("DRAW!")
                 }
             }
-            //Round 1
-            let humanChoice = getHumanChoice();
-            let computerChoice = getComputerChoice();
-            console.log(humanChoice);
-            console.log(computerChoice);
-            playRound(humanChoice, computerChoice);
-            console.log(humanScore,computerScore);
+            
         }
             playGame();
         
